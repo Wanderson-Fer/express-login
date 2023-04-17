@@ -1,0 +1,24 @@
+{
+  "name": "express-login",
+  "version": "1.0.0",
+  "description": "Login page using express and EJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wanderson-Fer/express-login.git"
+  },
+  "author": "wandersonguedesfernandes15@gmail.com (wand.fer)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wanderson-Fer/express-login/issues"
+  },
+  "homepage": "https://github.com/Wanderson-Fer/express-login#readme",
+  "type": "module",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  }
+}
