@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 100vh;
+    justify-content: center;
+}
+
+form {
+    background-color: #bbb;
+
+    margin: 0 auto;
+    padding: 1rem 5rem;
+
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+}
+
+form button {
+    margin: 2rem 0 0.5rem;
+    padding: 0.5rem 1.5rem;
+}
