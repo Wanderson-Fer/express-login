@@ -2,6 +2,8 @@ import express from 'express';
 
 import {fileURLToPath} from 'url';
 import path from 'path';
+import { request } from 'http';
+
 
 const port = 3000;
 const app = express();
@@ -33,7 +35,33 @@ app.get('/login', (req, res) => {
 
 // rota de recebimento de login
 app.post('/login', (req, res) => {
-    
+    let body = '';
+
+    req.on('data', chunk => {
+        body += chunk.toString();
+    });
+
+    req.on('end', () => {
+        const params = new URLSearchParams(body);
+
+        const email = params.get('email');
+        const password = params.get('senha');
+
+        let error = '';
+        if (email !== correctEmail) {
+            error = 'Email inválido';
+        } else if (password !== correctPassword) {
+            error = 'Senha inválida';
+        } else {
+            res.status(301).redirect('/welcome');
+        }
+
+        res.status(401).render('login', {error: error});
+    });
+});
+
+app.get('/welcome', (req, res) => {
+    res.render('welcome');
 });
 
 app.listen(port, () => {
