@@ -14,15 +14,20 @@
         <main class="container">
             <h2>Entrar</h2>
             <form action="/login" method="post">
-                <span class="form-group row">
+                <span class="form-group col-12">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" name="email" id="email" class="form-control" autocomplete="email" required/>
                 </span>
-                <span class="form-group row">
+                <span class="form-group col-12">
                     <label for="senha" class="form-label">Senha</label>
                     <input type="password" name="senha" id="senha" class="form-control" required/>
                 </span>
-                <span class="btn-group">
+
+                <% if (typeof error !== 'undefined' && error) { %>
+                    <span class="alert alert-warning row p-1 mt-2"><%= error %>!</span>
+                <% } %>
+
+                <span class="btn-group col-12">
                     <button class="btn btn-primary" type="submit">Enviar</button>
                     <button class="btn btn-primary" type="button">Esqueci minha senha</button>
                 </span>
