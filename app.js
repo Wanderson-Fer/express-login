@@ -1,4 +1,6 @@
 import express from 'express';
+
+import {fileURLToPath} from 'url';
 import path from 'path';
 
 const port = 3000;
@@ -8,7 +10,10 @@ const correctEmail = 'email@example.com';
 const correctPassword = 'password';
 
 // caminho para arquivos estáticos como folhas de estilo e imagens...
-app.use(express.static('public'));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+app.use(express.static(path.join(__dirname, '/public')));
 
 
 // Configurando engine para EJS
